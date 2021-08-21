@@ -6,10 +6,13 @@ namespace CLIdotNET.Controllers {
         /* The main commands (before the first space) are managed by the standard CLI.NET dictionary, 
         the arguments are managed by the developer and are sent in string form to the command */
         public static Dictionary<string, ICommand> Commands = new Dictionary<string, ICommand>() {
-            {"echo", new Echo()}
+            {"", new NoCommand()},
+            {"echo", new EchoCommand()},
+            {"_internalErrorNotFound", new ErrorCommand()}
         };
 
         public static void Execute(string[] args) {
+            bool commandFound = false;
             var command = args[0];
             var arguments = string.Empty;
 
@@ -22,7 +25,12 @@ namespace CLIdotNET.Controllers {
             foreach (var i in Commands.Keys) {
                 if (i == command) {
                    Commands[command].Execute(arguments);
+                   commandFound = true;
                 }
+            }
+
+            if (!commandFound) {
+                Commands["_internalErrorNotFound"].Execute("");
             }
         }
     }
