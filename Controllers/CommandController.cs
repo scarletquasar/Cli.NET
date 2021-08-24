@@ -8,6 +8,8 @@ namespace CLIdotNET.Controllers {
         public static Dictionary<string, ICommand> Commands = new Dictionary<string, ICommand>() {
             {"", new NoCommand()},
             {"echo", new EchoCommand()},
+            {"exit", new ExitCommand()},
+            {"start", new StartCommand()},
             {"_internalErrorNotFound", new ErrorCommand()}
         };
 
@@ -30,7 +32,7 @@ namespace CLIdotNET.Controllers {
             }
 
             if (!commandFound) {
-                Commands["_internalErrorNotFound"].Execute("");
+                Commands["_internalErrorNotFound"].Execute(command);
             }
         }
     }

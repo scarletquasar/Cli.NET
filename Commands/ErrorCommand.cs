@@ -2,10 +2,10 @@ using System;
 using TerminalPackage;
 
 namespace CLIdotNET.Commands {
-    /* Echo example command. Usage: echo yourText */
+    /* Error action when command doesn't exist */
     public class ErrorCommand : ICommand {
         public void Execute(string args) {
-            ConsoleScreen.Write("[Error] This command doesn't exist", ConsoleColor.DarkRed);
+            ConsoleScreen.Write($"Error > The command {args} doesn't exist", ConsoleColor.DarkRed);
             ConsoleScreen.Write("", ConsoleColor.White);
             Console.WriteLine("");
         }
