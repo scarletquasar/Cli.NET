@@ -5,7 +5,7 @@
 
 CLI.NET is a library linked to a template for creating simple command line interfaces quickly and efficiently. <br>
 Its use consists of using the base project as a template and building your own command line from it. <br>
-Supports **.NET 5+** | Can be used to Multiplatform Targets. | Currently in **Version Alpha**
+Supports **.NET 5+** | Can be used to Multiplatform Targets. | [Currently in **Version Alpha**]
 
 ## Usage:
 ### To start building a CLI.NET project just clone this repository. The Standard Program consists of the following phases: <br>
