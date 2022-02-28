@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cli.NET.Tools
+﻿namespace Cli.NET.Tools
 {
     public static class CLNConsole
     {
@@ -29,16 +23,7 @@ namespace Cli.NET.Tools
         }
 
         public static string ReadText() => Console.ReadLine() ?? string.Empty;
-        public static string? ReadText(int maxLength)
-        {
-            string input = ReadText();
-
-            if (input.Length > maxLength)
-                return null;
-
-            return input;
-        } 
-        public static string? ReadText(int minLength, int maxLength)
+        public static string? ReadText(int minLength = 0, int maxLength = int.MaxValue)
         {
             string input = ReadText();
 
@@ -46,6 +31,25 @@ namespace Cli.NET.Tools
                 return null;
 
             return input;
+        }
+
+        public static string? DataQuestion(string message)
+        {
+            WriteLine(message);
+            return ReadText();
+        }
+        public static string? DataQuestion(string message, string color, int minLength = 0, int maxLength = int.MaxValue)
+        {
+            return DataQuestion(message, Enum.Parse<ConsoleColor>(color), minLength, maxLength);
+        }
+        public static string? DataQuestion(string message, int color, int minLength = 0, int maxLength = int.MaxValue)
+        {
+            return DataQuestion(message, (ConsoleColor)color, minLength, maxLength);
+        }
+        public static string? DataQuestion(string message, ConsoleColor color, int minLength = 0, int maxLength = int.MaxValue)
+        {
+            WriteLine(message, color);
+            return ReadText(minLength, maxLength);
         }
     }
 }
