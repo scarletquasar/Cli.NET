@@ -2,6 +2,6 @@
 {
     public interface IArgumentCommand
     {
-        public void Execute(IDictionary<string, string> arguments);
+        public void Execute(string[] arguments);
     }
 }
