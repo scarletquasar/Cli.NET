@@ -1,5 +1,7 @@
-﻿using Cli.NET.Abstractions;
-using Cli.NET.Extensions;
+﻿using Cli.NET.Actions;
 using Cli.NET.Tools;
 
-CLNConsole.TypedQuestion<short>("potato");
+CommandsManager.Register(new ExitCommand(), "exit");
+CommandsManager.Register(new EchoCommand(), "echo");
+CommandsManager.Register(new SumCommand(), "sum");
+CommandsManager.WaitForNextCommand("Command > ", "Command {x} not found.");

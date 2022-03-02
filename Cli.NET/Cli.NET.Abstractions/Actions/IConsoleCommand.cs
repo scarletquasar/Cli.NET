@@ -2,6 +2,6 @@
 {
     public interface IConsoleCommand
     {
-        public void Execute();
+        public void Execute(string[] arguments);
     }
 }
