@@ -118,5 +118,36 @@ namespace Cli.NET.Tools
 
             if (loop) WaitForNextCommand(loop);
         }
+
+        /// <summary>
+        /// Call a registered command by name using only one argument.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="argument"></param>
+        /// <param name="enableNotFoundErrorMessage"></param>
+        public void CallCommandByName(string name, string argument, bool enableNotFoundErrorMessage = true)
+        {
+            CallCommandByName(name, new string[] { argument }, enableNotFoundErrorMessage);
+        }
+
+        /// <summary>
+        /// Call a registered command by name, optionally using arguments.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="arguments"></param>
+        /// <param name="enableNotFoundErrorMessage"></param>
+        public void CallCommandByName(string name, string[]? arguments = null, bool enableNotFoundErrorMessage = true)
+        {
+            if(arguments == null)
+                arguments = Array.Empty<string>();
+
+            if (!_commands.ContainsKey(name))
+            {
+                if(enableNotFoundErrorMessage) CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", name), _notFoundColor);
+                return;
+            }
+
+            _commands[name].Execute(arguments);
+        }
     }
 }

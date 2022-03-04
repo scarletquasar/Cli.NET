@@ -10,4 +10,5 @@ container.Register(new()
     { "sum", new SumCommand() },
 });
 
+container.CallCommandByName("echo", "test");
 container.WaitForNextCommand();
