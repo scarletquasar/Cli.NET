@@ -32,11 +32,20 @@ namespace Cli.NET.Tools
         }
 
         /// <summary>
+        /// Register an external dictionary of commands in the commands dictionary.
+        /// </summary>
+        /// <param name="commands"></param>
+        public void Register(CommandList commands)
+        {
+            foreach (var command in commands) Register(command.Key, command.Value);
+        }
+
+        /// <summary>
         /// Register a new command in the commands dictionary.
         /// </summary>
         /// <param name="command"></param>
         /// <param name="commandName"></param>
-        public void Register(IConsoleCommand command, string commandName)
+        public void Register(string commandName, IConsoleCommand command)
         {
             _commands.Add(commandName, command);
         }
