@@ -8,7 +8,8 @@ container.Register(new()
     { "exit", new ExitCommand() },
     { "echo", new EchoCommand() },
     { "sum", new SumCommand() },
+    { "clear", new ClearCommand() },
+    { "cls", new ClearCommand() }
 });
 
-container.CallCommandByName("echo", "test");
 container.WaitForNextCommand();

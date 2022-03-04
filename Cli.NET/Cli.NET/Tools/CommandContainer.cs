@@ -1,5 +1,6 @@
 ﻿using Cli.NET.Abstractions.Actions;
 using Cli.NET.Models;
+using System.Linq;
 
 namespace Cli.NET.Tools
 {
@@ -83,13 +84,12 @@ namespace Cli.NET.Tools
         /// </summary>
         public void ExecuteEnvironmentCommands()
         {
-            var commands = Environment.GetCommandLineArgs();
+            var commands = string.Join(" ", Environment.GetCommandLineArgs().Skip(1)).Split("&&");
+
             foreach (var command in commands)
             {
-                if (!_commands.ContainsKey(command))
-                {
-                    CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", command), _notFoundColor);
-                }
+                var input = command.Split(" ").Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+                CallCommandByName(input[0], input.Skip(1).ToArray());
             }
         }
 
@@ -101,14 +101,7 @@ namespace Cli.NET.Tools
             CLNConsole.Write(_indicator, _indicatorColor);
             string[] input = CLNConsole.ReadText().Split(" ");
 
-            if(!_commands.ContainsKey(input[0]))
-            {
-                CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", input[0]), _notFoundColor);
-                if(loop) WaitForNextCommand(loop);
-                return;
-            }
-
-            _commands[input[0]].Execute(input.Skip(1).ToArray());
+            CallCommandByName(input[0], input.Skip(1).ToArray());
 
             if (cancelAllLoops)
             {
