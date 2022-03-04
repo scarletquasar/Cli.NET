@@ -1,14 +1,35 @@
 ﻿using Cli.NET.Abstractions.Actions;
+using Cli.NET.Models;
 
 namespace Cli.NET.Tools
 {
     public class CommandContainer
     {
-        private readonly Dictionary<string, IConsoleCommand> _commands = new();
-        private string _indicator = "Command > ";
-        private string _notFoundMessage = "Command {x} not found.";
-        private ConsoleColor _notFoundColor = ConsoleColor.DarkRed;
-        private ConsoleColor _indicatorColor = ConsoleColor.White;
+        private readonly CommandList _commands;
+        private string _indicator;
+        private string _notFoundMessage;
+        private ConsoleColor _notFoundColor;
+        private ConsoleColor _indicatorColor;
+
+        /// <summary>
+        /// Create a new CommandContainer to handle the user commands.
+        /// </summary>
+        /// <param name="indicator"></param>
+        /// <param name="notFoundMessage"></param>
+        /// <param name="notFoundColor"></param>
+        /// <param name="indicatorColor"></param>
+        public CommandContainer(
+            string indicator = "Command > ", 
+            string notFoundMessage = "Command {x} not found.", 
+            ConsoleColor notFoundColor = ConsoleColor.DarkRed,
+            ConsoleColor indicatorColor = ConsoleColor.White)
+        {
+            _commands = new();
+            _indicator = indicator;
+            _notFoundMessage = notFoundMessage;
+            _notFoundColor = notFoundColor;
+            _indicatorColor = indicatorColor;
+        }
 
         /// <summary>
         /// Register a new command in the commands dictionary.
