@@ -102,7 +102,7 @@ namespace Cli.NET.Tools
                 return;
             }
 
-            _commands[input[0]].Execute(input);
+            _commands[input[0]].Execute(input.Skip(1).ToArray());
             if (loop) WaitForNextCommand(loop);
         }
     }

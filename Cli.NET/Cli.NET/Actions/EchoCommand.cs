@@ -2,8 +2,11 @@
 
 namespace Cli.NET.Actions
 {
+    /// <summary>
+    /// Default example "echo" command to display data in the console.
+    /// </summary>
     public class EchoCommand : IConsoleCommand
     {
-        public void Execute(string[] arguments) => Console.WriteLine(string.Join(" ", arguments.Skip(1)));
+        public void Execute(string[] arguments) => Console.WriteLine(string.Join(" ", arguments));
     }
 }

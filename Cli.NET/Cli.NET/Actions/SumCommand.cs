@@ -6,7 +6,7 @@ namespace Cli.NET.Actions
     {
         public void Execute(string[] arguments) 
         {
-            try { Console.WriteLine(long.Parse(arguments[1]) + long.Parse(arguments[2])); }
+            try { Console.WriteLine(long.Parse(arguments[0]) + long.Parse(arguments[1])); }
             catch { Console.WriteLine("NaN"); }
         }
     }
