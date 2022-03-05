@@ -186,3 +186,10 @@ List of customizable parameters:
 | notFoundMessage | A message that will be displayed when the insert command does not exist | string |
 | notFoundColor | A color to the notFoundMessage | ConsoleColor |
 | indicatorColor | A color to the indicator | ConsoleColor |
+
+## Cli.NET console tools
+There are some built-in tools in `Cli.NET.Tools` namespace, check the list below:
+
+| Method | Parameters | Description |
+| ------ | ---------- | ----------- |
+| `Test` | | |
