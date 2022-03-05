@@ -187,9 +187,13 @@ List of customizable parameters:
 | notFoundColor | A color to the notFoundMessage | ConsoleColor |
 | indicatorColor | A color to the indicator | ConsoleColor |
 
-## Cli.NET console tools (only console applications)
-There are some built-in tools in `Cli.NET.Tools` namespace, check the list below:
+## Cli.NET CLNConsole class tools (only console applications)
+There are some built-in console application tools in `Cli.NET.Tools.CLNConsole` 
+class, check the list below:
 
 | Method | Parameters | Description |
 | ------ | ---------- | ----------- |
 | `WriteLine` | `message: string` | Display a new line with a message in the console |
+| `WriteLine` | `message: string` `color: string` | Display a new line with a message in the console with the equivalent color (string) |
+| `WriteLine` | `message: string` `color: int` | Display a new line with a message in the console with the equivalent color (int) |
+| `WriteLine` | `message: string` `color: ConsoleColor` | Display a new line with a message in the console with the equivalent ConsoleColor |
