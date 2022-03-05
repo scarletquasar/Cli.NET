@@ -160,8 +160,8 @@ container.WaitForNextCommand(); //If you call "cancel", the loop will be cancell
 ```
 
 ## Customizing the console appearance
-You can create a customized CommandContainer by changing the constructor parameters, the
-default configuration is:
+You can create a customized CommandContainer by changing the constructor parameter values, the
+default configuration (empty constructor) is:
 
 ```csharp
 public CommandContainer(
@@ -177,3 +177,12 @@ public CommandContainer(
     _indicatorColor = indicatorColor;
 }
 ```
+
+List of customizable parameters:
+
+| Name | Description | Type |
+| ---- | ----------- | ---- |
+| indicator | The command indicator, will be placed to show the current location to the user | string |
+| notFoundMessage | A message that will be displayed when the insert command does not exist | string |
+| notFoundColor | A color to the notFoundMessage | ConsoleColor |
+| indicatorColor | A color to the indicator | ConsoleColor |
