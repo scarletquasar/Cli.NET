@@ -64,4 +64,4 @@ container.WaitForNextCommand();
 
 Now, the "echo" command can be used in the console application:
 
-<img src="https://i.imgur.com/CJXEmgn.png" width="60%">
+<img src="https://i.imgur.com/CJXEmgn.png" width="80%">
