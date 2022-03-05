@@ -77,3 +77,7 @@ container.WaitForNextCommand(); //Will make an infinity command listener
 ```csharp
 container.WaitForNextCommand(false); //Will only read the first typed input or command
 ```
+
+## Managing outputs/exceptions
+An easy way to manage command outputs and exceptions and sharing the data between all the
+application is using an `IOutputProvider`
