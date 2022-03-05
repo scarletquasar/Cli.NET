@@ -8,7 +8,7 @@ Its use consists of using the base project as a template and building your own c
 Supports **.NET 5+** | Can be used to Multiplatform Targets. | [Currently in **Version Alpha**]
 
 ## Usage:
-### To start building a CLI.NET project just clone this repository and reference to your project. <br>
+To start building a CLI.NET project just clone this repository and reference to your project.
 
 Example
 ```csharp
