@@ -125,7 +125,7 @@ namespace Cli.NET.Actions
 You can cancel a loop flow passing the container by reference to a command. Example:
 
 **CancelLoopCommand.cs**
-```
+```csharp
 using Cli.NET.Abstractions.Actions;
 
 namespace Cli.NET.Actions
@@ -145,4 +145,16 @@ namespace Cli.NET.Actions
         }
     }
 }
+```
+
+**Program.cs**
+```csharp
+using Cli.NET.Actions;
+using Cli.NET.Tools;
+
+var container = new CommandContainer();
+
+container.Register("cancel-loop", new CancelLoopCommand(container));
+
+container.WaitForNextCommand(); //If you call "cancel", the loop will be cancelled
 ```
