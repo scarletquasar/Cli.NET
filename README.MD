@@ -10,4 +10,4 @@ Supports **.NET 5+** | Can be used to Multiplatform Targets. | [Currently in **V
 ## Usage:
 ### To start building a CLI.NET project just clone this repository and reference to your project. <br>
 
-<img src="https://i.imgur.com/KHPIXNh.png" width="25%">
+<img src="https://i.imgur.com/KHPIXNh.png" width="40%">
