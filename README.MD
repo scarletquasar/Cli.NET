@@ -158,3 +158,22 @@ container.Register("cancel-loop", new CancelLoopCommand(container));
 
 container.WaitForNextCommand(); //If you call "cancel", the loop will be cancelled
 ```
+
+## Customizing the console appearance
+You can create a customized CommandContainer by changing the constructor parameters, the
+default configuration is:
+
+```csharp
+public CommandContainer(
+    string indicator = "Command > ", 
+    string notFoundMessage = "Command {x} not found.", 
+    ConsoleColor notFoundColor = ConsoleColor.DarkRed,
+    ConsoleColor indicatorColor = ConsoleColor.White)
+{
+    _commands = new();
+    _indicator = indicator;
+    _notFoundMessage = notFoundMessage;
+    _notFoundColor = notFoundColor;
+    _indicatorColor = indicatorColor;
+}
+```
