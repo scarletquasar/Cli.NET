@@ -62,4 +62,6 @@ container.Register("echo", new EchoCommand());
 container.WaitForNextCommand();
 ```
 
-Now, the "echo" command can be used in the console application.
+Now, the "echo" command can be used in the console application:
+
+<img src="https://i.imgur.com/CJXEmgn.png" width="60%">

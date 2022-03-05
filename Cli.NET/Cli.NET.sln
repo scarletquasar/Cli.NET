@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cli.NET.Console", "Cli.NET.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepositoryItems", "RepositoryItems", "{FE91112C-5E7A-4C53-8708-5EEF11074BE7}"
 	ProjectSection(SolutionItems) = preProject
-		README.MD = README.MD
+		..\README.MD = ..\README.MD
 	EndProjectSection
 EndProject
 Global
