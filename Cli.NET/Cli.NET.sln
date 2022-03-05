@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cli.NET", "Cli.NET\Cli.NET.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cli.NET.Abstractions", "Cli.NET.Abstractions\Cli.NET.Abstractions.csproj", "{4887C5D7-2C3B-4E33-B7A5-DF48571FF08F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cli.NET.Console", "Cli.NET.Console\Cli.NET.Console.csproj", "{B57D8554-6089-4093-9251-9CE6A30B7D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cli.NET.Console", "Cli.NET.Console\Cli.NET.Console.csproj", "{B57D8554-6089-4093-9251-9CE6A30B7D6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepositoryItems", "RepositoryItems", "{FE91112C-5E7A-4C53-8708-5EEF11074BE7}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
