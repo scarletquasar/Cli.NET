@@ -198,7 +198,7 @@ class, check the list below:
 | `WriteLine` | `message: string` <br> `color: int` | Show a new line with a message in the console with the equivalent color (int) |
 | `WriteLine` | `message: string` <br> `color: ConsoleColor` | Show a new line with a message in the console with the equivalent ConsoleColor |
 | - | - | - |
-| `Write` | `message: string` | Display a message in the current console location |
-| `Write` | `message: string` <br> `color: string` | Display a message in the current console location with the equivalent color (string) |
-| `Write` | `message: string` <br> `color: int` | Display a message in the current console location with the equivalent color (int) |
-| `Write` | `message: string` <br> `color: ConsoleColor` | Display a message in the current console location with the equivalent ConsoleColor |
+| `Write` | `message: string` | Show a message in the current console location |
+| `Write` | `message: string` <br> `color: string` | Show a message in the current console location with the equivalent color (string) |
+| `Write` | `message: string` <br> `color: int` | Show a message in the current console location with the equivalent color (int) |
+| `Write` | `message: string` <br> `color: ConsoleColor` | Show a message in the current console location with the equivalent ConsoleColor |
