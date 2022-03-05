@@ -2,7 +2,7 @@
 
 namespace Cli.NET.Actions
 {
-    public class ExitCommand : IConsoleCommand
+    public class ExitCommand : ICommand
     {
         /// <summary>
         /// Default example "exit" command with a given exit code.

@@ -52,7 +52,7 @@ namespace Cli.NET.Tools
         /// </summary>
         /// <param name="command"></param>
         /// <param name="commandName"></param>
-        public void Register(string commandName, IConsoleCommand command)
+        public void Register(string commandName, ICommand command)
         {
             _commands.Add(commandName, command);
         }

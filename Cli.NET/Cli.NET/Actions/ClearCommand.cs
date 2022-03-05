@@ -6,7 +6,7 @@ namespace Cli.NET.Actions
     /// Default example "clear" command to erase the information in the screen
     /// and writes new information if given.
     /// </summary>
-    public class ClearCommand : IConsoleCommand
+    public class ClearCommand : ICommand
     {
         public void Execute(string[] arguments)
         {

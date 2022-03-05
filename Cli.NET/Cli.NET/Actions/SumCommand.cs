@@ -2,7 +2,7 @@
 
 namespace Cli.NET.Actions
 {
-    public class SumCommand : IConsoleCommand
+    public class SumCommand : ICommand
     {
         public void Execute(string[] arguments) 
         {
