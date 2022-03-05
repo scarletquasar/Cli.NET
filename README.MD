@@ -10,4 +10,21 @@ Supports **.NET 5+** | Can be used to Multiplatform Targets. | [Currently in **V
 ## Usage:
 ### To start building a CLI.NET project just clone this repository and reference to your project. <br>
 
-<img src="https://i.imgur.com/KHPIXNh.png" width="40%">
+Example
+```csharp
+using Cli.NET.Actions;
+using Cli.NET.Tools;
+
+var container = new CommandContainer();
+
+container.Register(new()
+{
+    { "exit", new ExitCommand() },
+    { "echo", new EchoCommand() },
+    { "sum", new SumCommand() },
+    { "clear", new ClearCommand() },
+    { "cls", new ClearCommand() }
+});
+
+container.WaitForNextCommand();
+```
