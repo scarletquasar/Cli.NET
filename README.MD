@@ -192,4 +192,4 @@ There are some built-in tools in `Cli.NET.Tools` namespace, check the list below
 
 | Method | Parameters | Description |
 | ------ | ---------- | ----------- |
-| `Test` | | |
+| `WriteLine` | `message: string` | Display a new line with a message in the console |
