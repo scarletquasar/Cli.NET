@@ -3,9 +3,9 @@
 
 <img align="left" width="75" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Gnome-utilities-terminal.svg/1024px-Gnome-utilities-terminal.svg.png">
 
-CLI.NET is a library for creating simple command line interfaces quickly.
+CLI.NET is a library for creating command line interfaces, command listeners and scripting languages quickly.
 
-Supports **.NET 6+** | Can be used to Multiplatform Targets.
+Supports **.NET 6+**
 
 # Usage:
 To start building a CLI.NET project just clone this repository and reference to your project.
@@ -187,7 +187,7 @@ List of customizable parameters:
 | notFoundColor | A color to the notFoundMessage | ConsoleColor |
 | indicatorColor | A color to the indicator | ConsoleColor |
 
-## Cli.NET console tools
+## Cli.NET console tools (only console applications)
 There are some built-in tools in `Cli.NET.Tools` namespace, check the list below:
 
 | Method | Parameters | Description |
