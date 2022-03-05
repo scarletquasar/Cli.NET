@@ -94,6 +94,7 @@ var outputProvider = new OutputProvider();
 
 container.Register("log", new LogCommand(outputProvider));
 container.CallCommandByName("log", "Test output");
+
 ```
 
 **LogCommand.cs**
@@ -115,6 +116,32 @@ namespace Cli.NET.Actions
         {
             _provider.AddLog(string.Join("", arguments), OutputType.Message);
             Console.WriteLine(_provider.GetOutput().LastOrDefault());
+        }
+    }
+}
+```
+
+## Cancelling the loop flow
+You can cancel a loop flow passing the container by reference to a command. Example:
+
+**CancelLoopCommand.cs**
+```
+using Cli.NET.Abstractions.Actions;
+
+namespace Cli.NET.Actions
+{
+    public class CancelLoopCommand : IConsoleCommand
+    {
+        private readonly CommandContainer _container;
+
+        public CancelLoopCommand(CommandContainer container) 
+        {
+            _container = container;
+        }
+
+        public void Execute(string[] arguments) 
+        {
+            _container.CancelLoop();
         }
     }
 }

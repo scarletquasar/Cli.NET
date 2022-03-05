@@ -11,7 +11,7 @@ namespace Cli.NET.Tools
         private string _notFoundMessage;
         private ConsoleColor _notFoundColor;
         private ConsoleColor _indicatorColor;
-        private bool cancelAllLoops = false;
+        private bool cancelLoop = false;
 
         /// <summary>
         /// Create a new CommandContainer to handle the user commands.
@@ -36,7 +36,7 @@ namespace Cli.NET.Tools
         /// <summary>
         /// Releases the execution flow by cancelling all active command listener loops.
         /// </summary>
-        public void CancelAllLoops() => cancelAllLoops = true;
+        public void CancelLoop() => cancelLoop = true;
 
         /// <summary>
         /// Register an external dictionary of commands in the commands dictionary.
@@ -103,10 +103,10 @@ namespace Cli.NET.Tools
 
             CallCommandByName(input[0], input.Skip(1).ToArray());
 
-            if (cancelAllLoops)
+            if (cancelLoop)
             {
                 loop = false;
-                cancelAllLoops = false;
+                cancelLoop = false;
             }
 
             if (loop) WaitForNextCommand(loop);
