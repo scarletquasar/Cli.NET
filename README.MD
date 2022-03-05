@@ -30,7 +30,8 @@ container.WaitForNextCommand();
 ```
 
 ## Creating, registering and using a command
-A command can be created by just implementing the interface "ICommand" from `Cli.NET.Abstractions`.
+A command can be created by just implementing the interface "ICommand" from `Cli.NET.Abstractions`,
+you can implement any logic inside `Execute()` and extend the class functions.
 Example:
 
 ```csharp
@@ -47,3 +48,18 @@ namespace Cli.NET.Actions
     }
 }
 ```
+
+To register a command, we will need a CommandContainer. Example:
+
+```csharp
+using Cli.NET.Actions;
+using Cli.NET.Tools;
+
+var container = new CommandContainer();
+
+container.Register("echo", new EchoCommand());
+
+container.WaitForNextCommand();
+```
+
+Now, the "echo" command can be used in the console application.
