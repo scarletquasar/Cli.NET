@@ -15,7 +15,5 @@ namespace Cli.NET.Actions
             if(arguments.Any())
                 Console.WriteLine(string.Join("", arguments));
         }
-
-
     }
 }

@@ -7,7 +7,7 @@ CLI.NET is a library linked to a template for creating simple command line inter
 Its use consists of using the base project as a template and building your own command line from it. <br>
 Supports **.NET 5+** | Can be used to Multiplatform Targets. | [Currently in **Version Alpha**]
 
-## Usage:
+# Usage:
 To start building a CLI.NET project just clone this repository and reference to your project.
 
 Example
@@ -27,4 +27,23 @@ container.Register(new()
 });
 
 container.WaitForNextCommand();
+```
+
+## Creating, registering and using a command
+A command can be created by just implementing the interface "ICommand" from `Cli.NET.Abstractions`.
+Example:
+
+```csharp
+using Cli.NET.Abstractions.Actions;
+
+namespace Cli.NET.Actions
+{
+    /// <summary>
+    /// Default example "echo" command to display data in the console.
+    /// </summary>
+    public class EchoCommand : IConsoleCommand
+    {
+        public void Execute(string[] arguments) => Console.WriteLine(string.Join(" ", arguments));
+    }
+}
 ```
