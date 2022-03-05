@@ -194,9 +194,9 @@ class, check the list below:
 | Method | Parameters | Description |
 | ------ | ---------- | ----------- |
 | `WriteLine` | `message: string` | Display a new line with a message in the console |
-| `WriteLine` | `message: string` <br> `color: string` | Show a new line with a message in the console with the equivalent color (string) |
-| `WriteLine` | `message: string` <br> `color: int` | Show a new line with a message in the console with the equivalent color (int) |
-| `WriteLine` | `message: string` <br> `color: ConsoleColor` | Show a new line with a message in the console with the equivalent ConsoleColor |
+| `WriteLine` | `message: string` <br> `color: string` | Show a new line with a message in the console with a color (string) |
+| `WriteLine` | `message: string` <br> `color: int` | Show a new line with a message in the console with a color (int) |
+| `WriteLine` | `message: string` <br> `color: ConsoleColor` | Show a new line with a message in the console with a ConsoleColor |
 | - | - | - |
 | `Write` | `message: string` | Show a message in the current console location |
 | `Write` | `message: string` <br> `color: string` | Show a message in the current console location with a color (string) |
