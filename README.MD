@@ -187,6 +187,14 @@ List of customizable parameters:
 | notFoundColor | A color to the notFoundMessage | ConsoleColor |
 | indicatorColor | A color to the indicator | ConsoleColor |
 
+You can use the methods `SetNotFoundMessage()` and `SetIndicator()` to customize the container in any
+moment of the application execution, example:
+
+```csharp
+container.SetNotFoundMessage("Oops! Command not found.", ConsoleColor.Red);
+container.SetIndicator("Insert command here >", ConsoleColor.Yellow);
+```
+
 ## Cli.NET CLNConsole class tools (only console applications)
 There are some built-in console application tools in `Cli.NET.Tools.CLNConsole` 
 class, check the list below:
