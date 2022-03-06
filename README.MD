@@ -207,5 +207,6 @@ class, check the list below:
 | `ReadText` | `minLength: uint` <br> `maxLength: uint` | Reads the next text input with a Min/Max length |
 | - | - | - |
 | `DataQuestion` | `message: string` | Displays a text to the user and waits for a response |
-| `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color |
-| `DataQuestion` | 
+| `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color || `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color |
+| `DataQuestion` | `message: string` <br> `color: int` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color || `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color |
+| `DataQuestion` | `message: string` <br> `color: ConsoleColor` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color || `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color |
