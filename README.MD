@@ -202,3 +202,9 @@ class, check the list below:
 | `Write` | `message: string` <br> `color: string` | Show a message in the current console location with a color (string) |
 | `Write` | `message: string` <br> `color: int` | Show a message in the current console location with a color (int) |
 | `Write` | `message: string` <br> `color: ConsoleColor` | Show a message in the current console location with a ConsoleColor |
+| - | - | - |
+| `ReadText` | | Reads the next text input followed by "Enter" command |
+| `ReadText` | `minLength: uint` <br> `maxLength: uint` | Reads the next text input with a Min/Max length |
+| - | - | - |
+| `DataQuestion` | `message: string` | Displays a text to the user and waits for a response |
+| `DataQuestion` | `message: string` `minLength: string` | Displays a text and waits for a response with a Min/Max length |

@@ -23,7 +23,7 @@
         }
 
         public static string ReadText() => Console.ReadLine() ?? string.Empty;
-        public static string? ReadText(int minLength = 0, int maxLength = int.MaxValue)
+        public static string? ReadText(uint minLength = 0, uint maxLength = int.MaxValue)
         {
             string input = ReadText();
 
@@ -38,15 +38,15 @@
             WriteLine(message);
             return ReadText();
         }
-        public static string? DataQuestion(string message, string color, int minLength = 0, int maxLength = int.MaxValue)
+        public static string? DataQuestion(string message, string color, uint minLength = 0, uint maxLength = int.MaxValue)
         {
             return DataQuestion(message, Enum.Parse<ConsoleColor>(color), minLength, maxLength);
         }
-        public static string? DataQuestion(string message, int color, int minLength = 0, int maxLength = int.MaxValue)
+        public static string? DataQuestion(string message, int color, uint minLength = 0, uint maxLength = int.MaxValue)
         {
             return DataQuestion(message, (ConsoleColor)color, minLength, maxLength);
         }
-        public static string? DataQuestion(string message, ConsoleColor color, int minLength = 0, int maxLength = int.MaxValue)
+        public static string? DataQuestion(string message, ConsoleColor color, uint minLength = 0, uint maxLength = int.MaxValue)
         {
             WriteLine(message, color);
             return ReadText(minLength, maxLength);
