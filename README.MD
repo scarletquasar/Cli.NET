@@ -156,7 +156,7 @@ var container = new CommandContainer();
 
 container.Register("cancel-loop", new CancelLoopCommand(container));
 
-container.WaitForNextCommand(); //If you call "cancel", the loop will be cancelled
+container.WaitForNextCommand(); //If you call "cancel-loop", the loop will be cancelled
 ```
 
 ## Customizing the console appearance
