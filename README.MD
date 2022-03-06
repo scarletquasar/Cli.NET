@@ -236,6 +236,16 @@ container.CallCommandByName("echo", "argument one");
 container.CallCommandByName("echo", new string[] { "argument one", "argument two" });
 ```
 
+## Predefined built-in commands
+In `Cli.NET.Actions`, there are some predefined built-in example commands that can be used for any purpose.
+
+| Name | Constructor | Description |
+| ---- | ----- | ----------- |
+| `echo` | `EchoCommand()` | Display a text in the screen |
+| `clear` | `ClearCommand()` | Clear the console screen and displays a new text - if provided |
+| `exit` | `ExitCommand()` | Finish the current process |
+| `sum` | `SumCommand()` | Performs the sum of all numerical values offered |
+
 # Finishing...
 You can support that library/repository by leaving a contribution, star or sharing in communities. Thanks
 for the attention. You can also create issues or give a feedback in my [Twitter](https://twitter.com/victoriaquasar).
