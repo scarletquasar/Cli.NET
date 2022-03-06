@@ -5,7 +5,7 @@
 
 CLI.NET is a library for creating command line interfaces, command listeners and scripting languages quickly.
 
-Supports **.NET 6+**
+Supports **.NET 6+** | Version 2.0.0 Alpha
 
 # Usage:
 To start building a CLI.NET project just clone this repository and reference to your project.
@@ -235,3 +235,7 @@ method `CallCommandByName`, passing one unique string argument or a string array
 container.CallCommandByName("echo", "argument one");
 container.CallCommandByName("echo", new string[] { "argument one", "argument two" });
 ```
+
+# Finishing...
+You can support that library/repository by leaving a contribution, star or sharing in communities. Thanks
+for the attention.
