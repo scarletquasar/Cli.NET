@@ -207,4 +207,5 @@ class, check the list below:
 | `ReadText` | `minLength: uint` <br> `maxLength: uint` | Reads the next text input with a Min/Max length |
 | - | - | - |
 | `DataQuestion` | `message: string` | Displays a text to the user and waits for a response |
-| `DataQuestion` | `message: string` `minLength: string` | Displays a text and waits for a response with a Min/Max length |
+| `DataQuestion` | `message: string` <br> `color: string` <br> `minLength: string` <br> `maxLength: string` | Displays a text and waits for a response with a Min/Max length and color |
+| `DataQuestion` | 
