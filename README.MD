@@ -238,4 +238,4 @@ container.CallCommandByName("echo", new string[] { "argument one", "argument two
 
 # Finishing...
 You can support that library/repository by leaving a contribution, star or sharing in communities. Thanks
-for the attention.
+for the attention. You can also create issues or give a feedback in my [Twitter](https://twitter.com/victoriaquasar).
