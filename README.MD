@@ -8,7 +8,7 @@ CLI.NET is a library for creating command line interfaces, command listeners and
 Supports **.NET 6+** | Version 2.0.0 Alpha
 
 # Usage:
-To start building a CLI.NET project just clone this repository and reference the solution to your project.
+To start building a CLI.NET project just clone this repository and reference the solution projects (except `Cli.NET.Console`) to your project.
 
 Example
 ```csharp
