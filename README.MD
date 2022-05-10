@@ -71,6 +71,7 @@ To read commands, Cli.NET needs a method called `WaitForNextCommand()`, that met
 a boolean telling if the command flow will be infinite or if that is a unique command.
 
 ```csharp
+container.WaitForNextCommand(true); //or
 container.WaitForNextCommand(); //Will make an infinity command listener
 ```
 
