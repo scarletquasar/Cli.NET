@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>Cli.NET</PackageId>
+		<Version>2.1.1</Version>
+		<Authors>Victória Rose Cruz</Authors>
+		<Description>CLI.NET is a library for creating command line interfaces, command listeners and scripting languages quickly.</Description>
+	  <PackageIconUrl>https://camo.githubusercontent.com/93b7013e65b2295d1a1edc4b6e5055db746bcbdad4246f1818d5ae99551f5841/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f642f64612f476e6f6d652d7574696c69746965732d7465726d696e616c2e7376672f3130323470782d476e6f6d652d7574696c69746965732d7465726d696e616c2e7376672e706e67</PackageIconUrl>
+	  <PackageProjectUrl>https://github.com/EternalQuasar0206/Cli.NET</PackageProjectUrl>
+	  <PackageTags>template library csharp command-line script dotnet scripting command-line-tool scripting-engine command-listener</PackageTags>
+	  <Copyright>Copyright © Victória Rose 2022</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Cli.NET.Abstractions\Cli.NET.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>

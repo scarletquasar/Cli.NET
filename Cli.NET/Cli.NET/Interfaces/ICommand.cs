@@ -1,4 +1,4 @@
-﻿namespace Cli.NET.Abstractions.Actions
+﻿namespace Cli.NET.Interfaces.Actions
 {
     public interface ICommand
     {
