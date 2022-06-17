@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>Cli.NET</id>
-		<version>2.1.0</version>
+		<version>2.1.1</version>
 		<title>Cli.NET</title>
 		<authors>Victória Rose Cruz</authors>
 		<owners>Victória Rose Cruz</owners>
@@ -16,5 +16,8 @@
 		<copyright>Copyright 2022 Victória Rose</copyright>
 		<tags>template library csharp command-line script dotnet scripting command-line-tool scripting-engine command-listener</tags>
 		<summary>CLI.NET is a library for creating command line interfaces, command listeners and scripting languages quickly.</summary>
+		<files>
+			<file src="Cli.NET\**\*.*" />
+		</files>
 	</metadata>
 </package>
