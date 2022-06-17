@@ -7,6 +7,7 @@ namespace Cli.NET.Tools
     public class CommandContainer
     {
         private readonly CommandList _commands;
+        private readonly LambdaCommandList _lambdaCommands;
         private string _indicator;
         private string _notFoundMessage;
         private ConsoleColor _notFoundColor;
@@ -44,7 +45,13 @@ namespace Cli.NET.Tools
         /// <param name="commands"></param>
         public void Register(CommandList commands)
         {
-            foreach (var command in commands) Register(command.Key, command.Value);
+            foreach (var command in commands)
+            {
+                if(!_commands.ContainsKey(command.Key) && !_lambdaCommands.ContainsKey(command.Key))
+                {
+                    Register(command.Key, command.Value);
+                }
+            }
         }
 
         /// <summary>
