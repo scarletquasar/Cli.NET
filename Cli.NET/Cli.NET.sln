@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepositoryItems", "Reposito
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
 		..\.github\workflows\build_upload_nuget_package.yml = ..\.github\workflows\build_upload_nuget_package.yml
-		..\Package.nuspec = ..\Package.nuspec
 		..\README.MD = ..\README.MD
 	EndProjectSection
 EndProject

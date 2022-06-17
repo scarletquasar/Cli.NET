@@ -71,6 +71,17 @@ Now, the "echo" command can be used in the console application:
 
 <img src="https://i.imgur.com/CJXEmgn.png" width="100%">
 
+Commands can also be implemented as standalone lambdas using `Action<string>`, like the example:
+
+```cs
+var container = new CommandContainer();
+
+container.Register("echo", 
+    new Action<string[]>((string[] args) => Console.WriteLine(string.Join("", args)));
+
+container.WaitForNextCommand();
+```
+
 ## Initializing the command listener
 To read commands, Cli.NET needs a method called `WaitForNextCommand()`, that method can receive
 a boolean telling if the command flow will be infinite or if that is a unique command.
@@ -227,10 +238,10 @@ class, check the list below:
 
 ## Calling the environment commands
 Sometimes we need to pass parameters before the application execution, to execute them the 
-`ExecuteEnvironmentCommand()` method can be used, example:
+`ExecuteEnvironmentCommands()` method can be used, example:
 
 ```csharp
-container.ExecuteEnvironmentCommand();
+container.ExecuteEnvironmentCommands();
 ```
 
 ## Calling commands in the application execution

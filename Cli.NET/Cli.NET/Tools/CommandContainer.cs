@@ -7,6 +7,7 @@ namespace Cli.NET.Tools
     public class CommandContainer
     {
         private readonly CommandList _commands;
+        private readonly LambdaCommandList _lambdaCommands;
         private string _indicator;
         private string _notFoundMessage;
         private ConsoleColor _notFoundColor;
@@ -26,6 +27,7 @@ namespace Cli.NET.Tools
             ConsoleColor notFoundColor = ConsoleColor.DarkRed,
             ConsoleColor indicatorColor = ConsoleColor.White)
         {
+            _lambdaCommands = new();
             _commands = new();
             _indicator = indicator;
             _notFoundMessage = notFoundMessage;
@@ -44,7 +46,13 @@ namespace Cli.NET.Tools
         /// <param name="commands"></param>
         public void Register(CommandList commands)
         {
-            foreach (var command in commands) Register(command.Key, command.Value);
+            foreach (var command in commands)
+            {
+                if(!_commands.ContainsKey(command.Key) && !_lambdaCommands.ContainsKey(command.Key))
+                {
+                    Register(command.Key, command.Value);
+                }
+            }
         }
 
         /// <summary>
@@ -55,6 +63,31 @@ namespace Cli.NET.Tools
         public void Register(string commandName, ICommand command)
         {
             _commands.Add(commandName, command);
+        }
+
+        /// <summary>
+        /// Register an external dictionary of commands in the lambda commands dictionary.
+        /// </summary>
+        /// <param name="commands"></param>
+        public void Register(LambdaCommandList commands)
+        {
+            foreach (var command in commands)
+            {
+                if (!_commands.ContainsKey(command.Key) && !_lambdaCommands.ContainsKey(command.Key))
+                {
+                    Register(command.Key, command.Value);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Register a new command in the lambda commands dictionary.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="commandName"></param>
+        public void Register(string commandName, Action<string[]> command)
+        {
+            _lambdaCommands.Add(commandName, command);
         }
 
         /// <summary>
@@ -82,21 +115,14 @@ namespace Cli.NET.Tools
         /// <summary>
         /// Execute the commands provided by the environment startup.
         /// </summary>
-        public bool ExecuteEnvironmentCommand()
+        public bool ExecuteEnvironmentCommands()
         {
-            var args = Environment.GetCommandLineArgs().Skip(1).ToList();
-            switch (args.Count)
-            {
-                case 1:
-                    CallCommandByName(args[0]);
-                    break;
+            var commandsString = string.Join(" ", Environment.GetCommandLineArgs().Skip(1));
+            var commands = commandsString.Split(" ");
 
-                case 2:
-                    CallCommandByName(args[0], args[1]);
-                    break;
-            }
+            CallCommandByName(commands[0], commands.Length > 1 ? commands.Skip(1).ToArray() : Array.Empty<string>());
 
-            return args.Count > 0;
+            return commands.Length > 0;
         }
 
         /// <summary>
@@ -115,7 +141,8 @@ namespace Cli.NET.Tools
                 cancelLoop = false;
             }
 
-            if (loop) WaitForNextCommand(loop);
+            if (loop) 
+                WaitForNextCommand(loop);
         }
 
         /// <summary>
@@ -140,13 +167,20 @@ namespace Cli.NET.Tools
             if(arguments == null)
                 arguments = Array.Empty<string>();
 
-            if (!_commands.ContainsKey(name))
+            if(_commands.ContainsKey(name))
             {
-                if(enableNotFoundErrorMessage) CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", name), _notFoundColor);
+                _commands[name].Execute(arguments);
                 return;
             }
 
-            _commands[name].Execute(arguments);
+            if (_lambdaCommands.ContainsKey(name))
+            {
+                _lambdaCommands[name].Invoke(arguments);
+                return;
+            }
+
+            if (enableNotFoundErrorMessage) 
+                CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", name), _notFoundColor);
         }
     }
 }
