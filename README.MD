@@ -71,6 +71,15 @@ Now, the "echo" command can be used in the console application:
 
 <img src="https://i.imgur.com/CJXEmgn.png" width="100%">
 
+Commands can also be implemented as standalone lambdas using `Action<string>`, like the example:
+
+```cs
+var container = new CommandContainer();
+container.Register("echo", new Action<string[]>((string[] args) => Console.WriteLine(string.Join("", args)));
+
+container.WaitForNextCommand();
+```
+
 ## Initializing the command listener
 To read commands, Cli.NET needs a method called `WaitForNextCommand()`, that method can receive
 a boolean telling if the command flow will be infinite or if that is a unique command.
