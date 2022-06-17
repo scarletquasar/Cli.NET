@@ -65,6 +65,31 @@ namespace Cli.NET.Tools
         }
 
         /// <summary>
+        /// Register an external dictionary of commands in the lambda commands dictionary.
+        /// </summary>
+        /// <param name="commands"></param>
+        public void Register(LambdaCommandList commands)
+        {
+            foreach (var command in commands)
+            {
+                if (!_commands.ContainsKey(command.Key) && !_lambdaCommands.ContainsKey(command.Key))
+                {
+                    Register(command.Key, command.Value);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Register a new command in the lambda commands dictionary.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="commandName"></param>
+        public void Register(string commandName, Action<string[]> command)
+        {
+            _lambdaCommands.Add(commandName, command);
+        }
+
+        /// <summary>
         /// Set a new "Not found" message/color to the command listener.
         /// </summary>
         /// <param name="message"></param>
@@ -122,7 +147,8 @@ namespace Cli.NET.Tools
                 cancelLoop = false;
             }
 
-            if (loop) WaitForNextCommand(loop);
+            if (loop) 
+                WaitForNextCommand(loop);
         }
 
         /// <summary>
@@ -147,13 +173,20 @@ namespace Cli.NET.Tools
             if(arguments == null)
                 arguments = Array.Empty<string>();
 
-            if (!_commands.ContainsKey(name))
+            if(_commands.ContainsKey(name))
             {
-                if(enableNotFoundErrorMessage) CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", name), _notFoundColor);
+                _commands[name].Execute(arguments);
                 return;
             }
 
-            _commands[name].Execute(arguments);
+            if (_lambdaCommands.ContainsKey(name))
+            {
+                _lambdaCommands[name].Invoke(arguments);
+                return;
+            }
+
+            if (enableNotFoundErrorMessage) 
+                CLNConsole.WriteLine(_notFoundMessage.Replace("{x}", name), _notFoundColor);
         }
     }
 }
