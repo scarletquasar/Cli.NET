@@ -27,6 +27,7 @@ namespace Cli.NET.Tools
             ConsoleColor notFoundColor = ConsoleColor.DarkRed,
             ConsoleColor indicatorColor = ConsoleColor.White)
         {
+            _lambdaCommands = new();
             _commands = new();
             _indicator = indicator;
             _notFoundMessage = notFoundMessage;
