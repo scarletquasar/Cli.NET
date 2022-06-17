@@ -75,7 +75,9 @@ Commands can also be implemented as standalone lambdas using `Action<string>`, l
 
 ```cs
 var container = new CommandContainer();
-container.Register("echo", new Action<string[]>((string[] args) => Console.WriteLine(string.Join("", args)));
+
+container.Register("echo", 
+    new Action<string[]>((string[] args) => Console.WriteLine(string.Join("", args)));
 
 container.WaitForNextCommand();
 ```
