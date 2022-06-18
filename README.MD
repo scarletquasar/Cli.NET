@@ -7,7 +7,7 @@ CLI.NET is a library for creating command line interfaces, command listeners and
 
 Supports **.NET 6+** | Version 2.1.1
 
-# Usage:
+# Usage
 
 [Cli.NET package](https://www.nuget.org/packages/Cli.NET/) can be installed using the command:
 
