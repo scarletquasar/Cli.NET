@@ -36,10 +36,10 @@ container.WaitForNextCommand();
 
 # Documentation summary
 
-- [Creating, registering and using a command]()
-- [Initializing the command listener]()
-- [Managing outputs/exceptions]()
-- [Cancelling the loop flow]()
-- [Customizing the console appearance]()
-- [Cli.NET CLNConsole class tools]()
-- [Predefined built in commands]()
+- [Creating, registering and using a command](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CreatingCommand.md)
+- [Initializing the command listener](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/InitializingCommandListener.md)
+- [Managing outputs/exceptions](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/ManagingOutputsExceptions.md)
+- [Cancelling the loop flow](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CancellingTheLoopFlow.md)
+- [Customizing the console appearance](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CustomizingConsoleAppearance.md)
+- [Cli.NET CLNConsole class tools](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CliDotNetCLNConsoleClassTools.md)
+- [Predefined built in commands](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/PredefinedBuiltInCommands.md)
