@@ -7,7 +7,7 @@ CLI.NET is a library for creating command line interfaces, command listeners and
 
 Supports **.NET 6+** | Latest Version: `2.2.0-alpha` | Stable Version `2.1.1`
 
-# Usage:
+# Usage
 
 [Cli.NET package](https://www.nuget.org/packages/Cli.NET/) can be installed using the command:
 
@@ -36,12 +36,22 @@ container.WaitForNextCommand();
 
 # Documentation summary
 
+## Commands
 - [Creating, registering and using a command](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CreatingCommand.md)
 - [Initializing the command listener](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/InitializingCommandListener.md)
-- [Managing outputs/exceptions](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/ManagingOutputsExceptions.md)
 - [Cancelling the loop flow](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CancellingTheLoopFlow.md)
-- [Customizing the console appearance](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CustomizingConsoleAppearance.md)
-- [Cli.NET CLNConsole class tools](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CliDotNetCLNConsoleClassTools.md)
 - [Executing environment commands](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CallingEnvironmentCommands.md)
-- [Calling commands inside the application execution](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CallingCommandsInsideApplicationExecution.md)
 - [Predefined built in commands](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/PredefinedBuiltInCommands.md)
+- [Calling commands inside the application execution](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CallingCommandsInsideApplicationExecution.md)
+
+## Appearance
+- [Customizing the console appearance](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CustomizingConsoleAppearance.md)
+
+## Logs and output
+- [Managing outputs/exceptions](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/ManagingOutputsExceptions.md)
+
+## Misc tools
+- [Cli.NET CLNConsole class tools](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CliDotNetCLNConsoleClassTools.md)
+
+
+
