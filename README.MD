@@ -42,6 +42,6 @@ container.WaitForNextCommand();
 - [Cancelling the loop flow](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CancellingTheLoopFlow.md)
 - [Customizing the console appearance](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CustomizingConsoleAppearance.md)
 - [Cli.NET CLNConsole class tools](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CliDotNetCLNConsoleClassTools.md)
-- [Executing environment commands]()
-- [Calling commands inside the application execution]()
+- [Executing environment commands](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CallingEnvironmentCommands.md)
+- [Calling commands inside the application execution](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CallingCommandsInsideApplicationExecution.md)
 - [Predefined built in commands](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/PredefinedBuiltInCommands.md)
