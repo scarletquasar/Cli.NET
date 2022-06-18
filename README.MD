@@ -34,7 +34,7 @@ container.Register(new()
 container.WaitForNextCommand();
 ```
 
-# Documentation summary
+# Documentation
 
 ## Commands
 - [Creating, registering and using a command](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CreatingCommand.md)
