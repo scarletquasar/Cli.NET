@@ -52,6 +52,3 @@ container.WaitForNextCommand();
 
 ## Misc tools
 - [Cli.NET CLNConsole class tools](https://github.com/EternalQuasar0206/Cli.NET/blob/main/Docs/CliDotNetCLNConsoleClassTools.md)
-
-
-
